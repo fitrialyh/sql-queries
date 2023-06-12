@@ -39,7 +39,7 @@ RIGHT JOIN (
     FROM jumlah_permintaan jp
     INNER JOIN material m ON jp.id_material = m.id_material
     INNER JOIN permintaan p ON jp.id_permintaan = p.id_permintaan
-    WHERE p.status = 'Dikirim'
+    WHERE p.status = 'Selesai'
     AND p.tanggal_permintaan BETWEEN :startDate AND :endDate
     GROUP BY jp.id_material
 ) permintaan ON pengadaan.id_material = permintaan.id_material
